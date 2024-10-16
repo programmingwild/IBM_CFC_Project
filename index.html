@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change Impact Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+    <header data-lenis-prevent>
+        <h1>Climate Change Impact Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#climate-impact">Impact</a></li>
+                <li><a href="#vulnerability-index">Risk Index</a></li>
+                <li><a href="#resource-allocation">Resources</a></li>
+                <li><a href="#community-feedback">Feedback</a></li>
+                <li><a href="#global-trends">Global Trends</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="dashboard">
+        <section id="climate-impact" class="dashboard-section">
+            <h2>Event-Based Climate Impact</h2>
+            <div class="chart-container">
+                <canvas id="impact-chart"></canvas> 
+                <div class="chart-controls">
+                    <select id="impact-event-selector">
+                        <option value="floods">Floods</option>
+                        <option value="droughts">Droughts</option>
+                        <option value="heatwaves">Heatwaves</option>
+                    </select>
+                    <button id="impact-update">Update Chart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="vulnerability-index" class="dashboard-section">
+            <h2>Climatic Risk Index</h2>
+            <div id="risk-map" class="map-container"></div>
+            <div class="map-controls">
+                <select id="risk-layer-selector">
+                    <option value="overall">Overall Risk</option>
+                    <option value="flood">Flood Risk</option>
+                    <option value="drought">Drought Risk</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="resource-allocation" class="dashboard-section">
+            <h2>Real-Time Resource Allocation</h2>
+            <div class="chart-container">
+                <div id="resource-chart"></div>
+                <div class="chart-controls">
+                    <button id="resource-refresh">Refresh Data</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="community-feedback" class="dashboard-section">
+            <h2>Community Feedback</h2>
+            <div id="feedback-summary"></div>
+            <div class="feedback-controls">
+                <textarea id="new-feedback" placeholder="Share your feedback..."></textarea>
+                <button id="submit-feedback">Submit Feedback</button>
+            </div>
+        </section>
+
+        <section id="chatgpt-section" class="dashboard-section">
+            <h2>Ask Our Climate AI</h2>
+            <div id="chat-container">
+                <div id="chat-history"></div>
+                <div id="chat-input">
+                    <input type="text" id="user-input" placeholder="Type your question about climate change...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="global-trends" class="dashboard-section">
+            <h2>Global Trends</h2>
+            <div class="chart-container">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="co2Chart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2023 Climate Change Impact Assessment Tool. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+    <script src="script1.js"></script> 
+</body>
+</html>
+
+
